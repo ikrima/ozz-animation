@@ -24,6 +24,10 @@
 // DEALINGS IN THE SOFTWARE.                                                  //
 //                                                                            //
 //----------------------------------------------------------------------------//
+#if defined(_MSC_VER)
+__pragma(warning(push))
+__pragma(warning(disable:4668))
+#endif
 
 #include "ozz/base/log.h"
 
@@ -79,3 +83,7 @@ FloatPrecision::~FloatPrecision() {
 
 }  // namespace log
 }  // namespace ozz
+
+#if defined(_MSC_VER)
+__pragma(warning(pop))
+#endif
