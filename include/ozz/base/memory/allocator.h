@@ -41,11 +41,11 @@ namespace memory {
 class Allocator;
 
 // Defines the default allocator accessor.
-Allocator* default_allocator();
+OZZ_API Allocator* default_allocator();
 
 // Set the default allocator, used for all dynamic allocation inside ozz.
 // Returns current memory allocator, such that in can be restored if needed.
-Allocator* SetDefaulAllocator(Allocator* _allocator);
+OZZ_API Allocator* SetDefaulAllocator(Allocator* _allocator);
 
 // Defines an abstract allocator class.
 // Implements helper methods to allocate/deallocate POD typed objects instead of

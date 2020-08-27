@@ -61,10 +61,10 @@ struct QuaternionKey;
 class Animation {
  public:
   // Builds a default animation.
-  Animation();
+  OZZ_API Animation();
 
   // Declares the public non-virtual destructor.
-  ~Animation();
+  OZZ_API ~Animation();
 
   // Gets the animation clip duration.
   float duration() const { return duration_; }
@@ -95,8 +95,8 @@ class Animation {
 
   // Serialization functions.
   // Should not be called directly but through io::Archive << and >> operators.
-  void Save(ozz::io::OArchive& _archive) const;
-  void Load(ozz::io::IArchive& _archive, uint32_t _version);
+  OZZ_API void Save(ozz::io::OArchive& _archive) const;
+  OZZ_API void Load(ozz::io::IArchive& _archive, uint32_t _version);
 
  protected:
  private:

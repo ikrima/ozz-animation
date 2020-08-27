@@ -34,6 +34,8 @@
 // So it is included here to ensure a portable behavior.
 #include <cstring>
 
+#include "ozz/base/platform.h"
+
 // Proposes a logging interface that redirects logs to std::cout, clog and cerr
 // output streams. This interface adds a logging level functionality (kSilent,
 // kStandard, kVerbose) to the std API, which can be set using
@@ -84,7 +86,7 @@ class Logger {
   Logger(std::ostream& _stream, Level _level);
 
   // Destructor, deletes the internal "silent" stream.
-  ~Logger();
+  OZZ_API ~Logger();
 
  private:
   // Disables copy and assignment.
@@ -117,14 +119,14 @@ class Log : public Logger {
 // Enabled if logging level is not Silent.
 class Out : public Logger {
  public:
-  Out();
+  OZZ_API Out();
 };
 
 // Logs error to the standard error stream (std::cerr).
 // Enabled if logging level is not Silent.
 class Err : public Logger {
  public:
-  Err();
+  OZZ_API Err();
 };
 
 // RAII helper that modifies float logging precision, and restores default

@@ -28,6 +28,11 @@
 #ifndef OZZ_OZZ_BASE_PLATFORM_H_
 #define OZZ_OZZ_BASE_PLATFORM_H_
 
+#include "ES2/ES2.h"
+#ifndef OZZ_API
+#define OZZ_API
+#endif
+
 // Ensures compiler supports c++11 language standards, to help user understand
 // compilation error in case it's not supported.
 // Unfortunately MSVC doesn't update __cplusplus, so test compiler version

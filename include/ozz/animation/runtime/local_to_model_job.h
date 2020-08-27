@@ -57,7 +57,7 @@ class Skeleton;
 // that cannot be represented as Transform object.
 struct LocalToModelJob {
   // Default constructor, initializes default values.
-  LocalToModelJob();
+  OZZ_API LocalToModelJob();
 
   // Validates job parameters. Returns true for a valid job, or false otherwise:
   // -if any input pointer, including ranges, is nullptr.
@@ -65,13 +65,13 @@ struct LocalToModelJob {
   // Note that this input has a SoA format.
   // -if the size of of the output is smaller than the skeleton's number of
   // joints.
-  bool Validate() const;
+  OZZ_API bool Validate() const;
 
   // Runs job's local-to-model task.
   // The job is validated before any operation is performed, see Validate() for
   // more details.
   // Returns false if job is not valid. See Validate() function.
-  bool Run() const;
+  OZZ_API bool Run() const;
 
   // Job input.
 

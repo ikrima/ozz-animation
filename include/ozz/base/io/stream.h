@@ -91,40 +91,40 @@ class File : public Stream {
   // Test if a file at path _filename exists.
   // Note that this function is costly. If you aim to open the file right after,
   // then open it and use File::opened() to test if it's actually existing.
-  static bool Exist(const char* _filename);
+  OZZ_API static bool Exist(const char* _filename);
 
   // Open a file at path _filename with mode * _mode, in conformance with fopen
   // specifications.
   // Use opened() function to test opening result.
-  File(const char* _filename, const char* _mode);
+  OZZ_API File(const char* _filename, const char* _mode);
 
   // Gives _file ownership to the FileStream, which will be in charge of closing
   // it. _file must be nullptr or a valid std::FILE pointer.
-  explicit File(void* _file);
+  OZZ_API explicit File(void* _file);
 
   // Close the file if it is opened.
-  virtual ~File();
+  OZZ_API virtual ~File();
 
   // Close the file if it is opened.
-  void Close();
+  OZZ_API void Close();
 
   // See Stream::opened for details.
-  virtual bool opened() const;
+  OZZ_API virtual bool opened() const;
 
   // See Stream::Read for details.
-  virtual size_t Read(void* _buffer, size_t _size);
+  OZZ_API virtual size_t Read(void* _buffer, size_t _size);
 
   // See Stream::Write for details.
-  virtual size_t Write(const void* _buffer, size_t _size);
+  OZZ_API virtual size_t Write(const void* _buffer, size_t _size);
 
   // See Stream::Seek for details.
-  virtual int Seek(int _offset, Origin _origin);
+  OZZ_API virtual int Seek(int _offset, Origin _origin);
 
   // See Stream::Tell for details.
-  virtual int Tell() const;
+  OZZ_API virtual int Tell() const;
 
   // See Stream::Tell for details.
-  virtual size_t Size() const;
+  OZZ_API virtual size_t Size() const;
 
  private:
   // The CRT file pointer.

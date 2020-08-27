@@ -49,10 +49,10 @@ namespace offline {
 // Skeleton::kMaxJoints.
 struct RawSkeleton {
   // Construct an empty skeleton.
-  RawSkeleton();
+  OZZ_API RawSkeleton();
 
   // The destructor is responsible for deleting the roots and their hierarchy.
-  ~RawSkeleton();
+  OZZ_API ~RawSkeleton();
 
   // Offline skeleton joint type.
   struct Joint {

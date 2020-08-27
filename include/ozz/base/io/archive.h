@@ -176,7 +176,7 @@ class IArchive {
   // Constructs an input archive from the Stream _stream that must be opened for
   // reading, at the same tell (position in the stream) as when it was passed to
   // the OArchive.
-  explicit IArchive(Stream* _stream);
+  OZZ_API explicit IArchive(Stream* _stream);
 
   // Returns true if an endian swap is required while reading.
   bool endian_swap() const { return endian_swap_; }

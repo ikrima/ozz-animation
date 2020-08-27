@@ -79,10 +79,10 @@ class Skeleton {
   };
 
   // Builds a default skeleton.
-  Skeleton();
+  OZZ_API Skeleton();
 
   // Declares the public non-virtual destructor.
-  ~Skeleton();
+  OZZ_API ~Skeleton();
 
   // Returns the number of joints of *this skeleton.
   int num_joints() const { return static_cast<int>(joint_parents_.size()); }
@@ -106,8 +106,8 @@ class Skeleton {
 
   // Serialization functions.
   // Should not be called directly but through io::Archive << and >> operators.
-  void Save(ozz::io::OArchive& _archive) const;
-  void Load(ozz::io::IArchive& _archive, uint32_t _version);
+  OZZ_API void Save(ozz::io::OArchive& _archive) const;
+  OZZ_API void Load(ozz::io::IArchive& _archive, uint32_t _version);
 
  private:
   // Disables copy and assignation.

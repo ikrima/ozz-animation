@@ -57,7 +57,7 @@ class SamplingCache;
 // delete them during job's destruction.
 struct SamplingJob {
   // Default constructor, initializes default values.
-  SamplingJob();
+  OZZ_API SamplingJob();
 
   // Validates job parameters. Returns true for a valid job, or false otherwise:
   // -if any input pointer is nullptr
@@ -68,7 +68,7 @@ struct SamplingJob {
   // The job is validated before any operation is performed, see Validate() for
   // more details.
   // Returns false if *this job is not valid.
-  bool Run() const;
+  OZZ_API bool Run() const;
 
   // Time ratio in the unit interval [0,1] used to sample animation (where 0 is
   // the beginning of the animation, 1 is the end). It should be computed as the
@@ -104,20 +104,20 @@ class SamplingCache {
  public:
   // Constructs an empty cache. The cache needs to be resized with the
   // appropriate number of tracks before it can be used with a SamplingJob.
-  SamplingCache();
+   OZZ_API SamplingCache();
 
   // Constructs a cache that can be used to sample any animation with at most
   // _max_tracks tracks. _num_tracks is internally aligned to a multiple of
   // soa size, which means max_tracks() can return a different (but bigger)
   // value than _max_tracks.
-  explicit SamplingCache(int _max_tracks);
+  OZZ_API explicit SamplingCache(int _max_tracks);
 
   // Deallocates cache.
-  ~SamplingCache();
+  OZZ_API ~SamplingCache();
 
   // Resize the number of joints that the cache can support.
   // This also implicitly invalidate the cache.
-  void Resize(int _max_tracks);
+  OZZ_API void Resize(int _max_tracks);
 
   // Invalidate the cache.
   // The SamplingJob automatically invalidates a cache when required
@@ -127,7 +127,7 @@ class SamplingCache {
   // animation (could be the result of successive call to delete / new).
   // Therefore it is recommended to manually invalidate a cache when it is
   // known that this cache will not be used for with an animation again.
-  void Invalidate();
+  OZZ_API void Invalidate();
 
   // The maximum number of tracks that the cache can handle.
   int max_tracks() const { return max_soa_tracks_ * 4; }
