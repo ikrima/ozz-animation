@@ -28,7 +28,7 @@
 #ifndef OZZ_OZZ_BASE_PLATFORM_H_
 #define OZZ_OZZ_BASE_PLATFORM_H_
 
-#include "ES2/ES2.h"
+#include "ES2/ES2Core.h"
 #ifndef OZZ_API
 #define OZZ_API
 #endif
