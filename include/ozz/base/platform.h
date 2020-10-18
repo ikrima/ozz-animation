@@ -28,7 +28,7 @@
 #ifndef OZZ_OZZ_BASE_PLATFORM_H_
 #define OZZ_OZZ_BASE_PLATFORM_H_
 
-#include "ES2Anim/ES2Anim.h"
+#include "es2anim/es2anim.h"
 #ifndef OZZ_API
 #define OZZ_API
 #endif
