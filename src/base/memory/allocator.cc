@@ -92,7 +92,9 @@ class HeapAllocator : public Allocator {
 
 namespace {
 // Instantiates the default heap allocator->
+ES2WRN_DISABLE_CLANG("-Wglobal-constructors")
 HeapAllocator g_heap_allocator;
+ES2WRN_RESTORE_CLANG()
 
 // Instantiates the default heap allocator pointer.
 Allocator* g_default_allocator = &g_heap_allocator;
